@@ -5,8 +5,8 @@ import (
 	"flag"
 	"fmt"
 	"github.com/mattn/go-gntp"
-	"net/http"
 	"log"
+	"net/http"
 	"os"
 	"time"
 )
@@ -32,7 +32,6 @@ func main() {
 	flag.Parse()
 	idmap := map[int]bool{}
 
-
 	growl := gntp.NewClient()
 	growl.Server = *server
 	growl.AppName = "travis notify"
@@ -40,7 +39,8 @@ func main() {
 		gntp.Notification{
 			Event:   "success",
 			Enabled: false,
-		}, gntp.Notification{
+		},
+		gntp.Notification{
 			Event:   "failed",
 			Enabled: true,
 		},
